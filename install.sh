@@ -1,8 +1,9 @@
-# install typescript
-npm i typescript
+cd src
+# install required packages
+npm install
 
 # compile typescript file into a javascript file
-tsc -t es5 src/bot.ts
+npm run compile
 
 # move the .js file to M-A-P/src/front/
 #assuming you have cloned the map repo at your src

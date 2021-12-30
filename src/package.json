@@ -1,0 +1,29 @@
+{
+  "name": "discord-bot-map",
+  "version": "1.0.0",
+  "description": "the discord bot for the map",
+  "main": "bot.js",
+  "scripts": {
+    "compile": "tsc -t es5 src/bot.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-A-P-Organisation/discord-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "plant"
+  ],
+  "author": "apoleon33",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M-A-P-Organisation/discord-bot/issues"
+  },
+  "homepage": "https://github.com/M-A-P-Organisation/discord-bot#readme",
+  "dependencies": {
+    "chart.js": "^3.7.0",
+    "detritus-client": "^0.16.3",
+    "typescript": "^4.5.4"
+  }
+}
