@@ -3,8 +3,9 @@ const { CommandClient } = require('detritus-client');
 const { Embed, Markup } = Utils;
 const fs = require("fs");
 var Chart = require('chart.js');
+require('dotenv').config()
 
-const token = '';
+const token = process.env.TOKEN;
 const commandClient = new CommandClient(token, {
   prefix: 'map',
 });

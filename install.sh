@@ -1,4 +1,11 @@
 cd src
+
+# let you choose you token for the discord app you created then put it in token.env
+echo "enter your discord bot token:"
+read -r token
+touch .env
+echo "TOKEN = $token" > .env
+
 # install required packages
 npm install
 
