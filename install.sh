@@ -13,7 +13,9 @@ npm install
 npm run compile
 
 # move the .js file to M-A-P/src/front/
-#assuming you have cloned the map repo at your src
-mv src/bot.js M-A-P/src/front/
+#assuming you have cloned the map repo at your home directory
+cd
+mv discord-bot/src/bot.js M-A-P/src/front/
+mv discord-bot/src/.env M-A-P/src/front/ 
 
 echo "bot succesfully installed!"
