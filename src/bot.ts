@@ -4,7 +4,7 @@ const { Embed, Markup } = Utils;
 const fs = require("fs");
 var Chart = require('chart.js');
 
-const token = 'Nzc5NzY0MDk4Nzc0MjA0NDQ3.X7lR6A.OW2r3xJ70LTmvIj0HYAT8gJOCxM';
+const token = '';
 const commandClient = new CommandClient(token, {
   prefix: 'map',
 });
