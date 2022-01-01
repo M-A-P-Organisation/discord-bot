@@ -10,18 +10,42 @@ const commandClient = new CommandClient(token, {
   prefix: 'map',
 });
 
-// actual things that don't need to be actualised
+// things that don't need to be actualised
 var date = new Date();
-var month = date.getMonth() + 1; //+1 because im in france, change it depending where you are
+var month = date.getMonth() + 1; // +1 because im in france, change it depending where you are
 
 const plant = fs.readFileSync("data/choice.txt", "utf8");
 let file = fs.readFileSync("data/plant.json", "utf8");
 let jsonFile = JSON.parse(file);
-if (month < 4 || month > 9) { //winter
+if (month < 4 || month > 9) { // winter
   var ultimateTemp = jsonFile[plant]["temperature"]["hiver"];
-} else { //summer
+} else { // summer
   var ultimateTemp = jsonFile[plant]["temperature"]["été"];
 }
+
+commandClient.add({
+  // help command
+  name:'help',
+  run: (context,args) => {
+    const embed = new Embed()
+    embed.setColor(0x325C34)
+    embed.setTitle("Help")
+    embed.setDescription("you need help with the map or its discord bot? It's out there!")
+    embed.setThumbnail("https://raw.githubusercontent.com/apoleon33/M-A-P/main/src/front/src/assets/plant.png")
+
+    // useful links
+    embed.addField("github:","[organisation](https://github.com/M-A-P-Organisation/)",false)
+    embed.addField("discord","[here](https://discord.gg/hS4VgSTumn)",false)
+
+    // commands
+    embed.addField("know the general information of the plant:", "`map dashboard`",false)
+    embed.addField("know the temperature of the 10 last hour:", "`map temperature`", false )
+    embed.addField("know the humidity:" ,"`map humidity`", false)
+    embed.addField("graphic of the last 30h:", "`map graph`", false)
+
+    return context.editOrReply({embed, reference: true});
+  },
+})
 
 commandClient.add({
   // general information about the plant
@@ -31,15 +55,7 @@ commandClient.add({
   	let file = fs.readFileSync("data/plant.json", "utf8");
     let jsonFile = JSON.parse(file);
 
-  	var date = new Date();
-    var month = date.getMonth() + 1; //+1 because im in france, change it depending where you are
-    if (month < 4 || month > 9) { //winter
-        var ultimateTemp = jsonFile[plant]["temperature"]["hiver"];
-    } else { //summer
-        var ultimateTemp = jsonFile[plant]["temperature"]["été"];
-    }
-
-	const ScientifName = jsonFile[plant]["real"]
+	  const ScientifName = jsonFile[plant]["real"]
   	var temp0 = fs.readFileSync("data/temp_0.txt", "utf8");
   	var temp10 = fs.readFileSync("data/temp_10.txt", "utf8");
   	const hum = fs.readFileSync("data/hum.txt", "utf8");
