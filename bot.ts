@@ -34,7 +34,7 @@ commandClient.add({
     embed.setThumbnail("https://raw.githubusercontent.com/apoleon33/M-A-P/main/src/front/src/assets/plant.png")
 
     // useful links
-    embed.addField("github:","[organisation](https://github.com/M-A-P-Organisation/)",false)
+    embed.addField("github:","[organization](https://github.com/M-A-P-Organisation/)",false)
     embed.addField("discord","[here](https://discord.gg/hS4VgSTumn)",false)
 
     // commands
